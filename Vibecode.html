@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Whack-a-Mole</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Whack-a-Mole!</h1>
+  <h2>Score: <span id="score">0</span></h2>
+  <div>
+    <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+  </div>
+  <button id="start-btn">Start Game</button>
+  <div>
+    <button id="mode-toggle-btn">Switch to Endless Mode</button> <!-- Toggle button -->
+  </div>
+  <div>
+    <button id="stop-btn" style="display: none;">Stop Game</button> <!-- Stop button for endless mode -->
+  </div>
+  <div class="game-container">
+    <img src="3570973.png" class="tree-left" alt="Cartoon Tree Left">
+    <img src="3570973.png" class="tree-right" alt="Cartoon Tree Right">
+    <img src="pngtree-cute-rabbit-running-png-image_9075786.png" class="rabbit" alt="Rabbit Running">
+    <img src="Bear-Sitting-PNG.png" class="bear" alt="bear">
+    <div class="game-grid">
+        <div class="hole mole" id="hole1"></div>
+        <div class="hole mole" id="hole2"></div>
+        <div class="hole mole" id="hole3"></div>
+        <div class="hole mole" id="hole4"></div>
+        <div class="hole mole" id="hole5"></div>
+        <div class="hole mole" id="hole6"></div>
+    </div>
+    <div id="game-over" style="display: none;">
+        <h2>Game Over</h2>
+        <p>Your Score: <span id="final-score"></span></p>
+        <button id="play-again-btn">Play Again</button>
+      </div>
+  </div>
+  <script src="Vibecode.js"></script>
+</body>
+</html>

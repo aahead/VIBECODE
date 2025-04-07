@@ -1,0 +1,193 @@
+/* Tree Styling */
+.tree-left, .tree-right {
+  position: absolute;
+  bottom: 0;
+  width: 300px;  /* Adjust tree width */
+  height: 500px;
+  z-index: 1;
+}
+
+/* Position the left tree */
+.tree-left {
+  left: 20%;  /* Position on the left side */
+  transform: translateX(-50%);
+}
+
+/* Position the right tree */
+.tree-right {
+  right: 20%;  /* Position on the right side */
+  transform: translateX(50%);
+}
+
+.bear {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  left: 40%
+}
+
+.rabbit {
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  height: 100px;
+  z-index: 1;
+  right: 30%
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #218838;
+    color: white;
+  }
+  
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .hole {
+    width: 100px;
+    height: 100px;
+    background-color: #444;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .hole.mole::after {
+    content: '🐹';
+    font-size: 48px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hole.mole.show::after {
+    opacity: 1;
+  }
+  
+  #start-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+  }
+  #startBtn:hover {
+    background-color: #218838;
+  }
+
+  #game-over {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  #play-again-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #play-again-btn:hover {
+    background-color: #45a049;
+  }
+
+  #stop-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #stop-btn:hover {
+    background-color: #c0392b;
+  }
+
+  #mode-toggle-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+/* Mole hit effect */
+@keyframes moleHit {
+  0% {
+    transform: scale(1);
+    background-color: #f1c40f; /* Yellow when hit */
+  }
+  50% {
+    transform: scale(1.2); /* Enlarge the mole */
+    background-color: #e74c3c; /* Red when hit */
+  }
+  100% {
+    transform: scale(1);
+    background-color: #2ecc71; /* Green to return to normal */
+  }
+}
+
+.mole.hit {
+  animation: moleHit 0.3s ease-out;
+}
+
+@keyframes shakeHole {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hole.missed {
+  animation: shakeHole 0.5s ease-out;
+}
+
+.difficulty-btn {
+  padding: 10px;
+  margin: 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.difficulty-btn.active {
+  background-color: #e74c3c;  /* Highlighted color for selected button */
+  color: white;
+  border: 2px solid #c0392b;  /* Darker border to show it's active */
+}
+
+.difficulty-btn:hover {
+  background-color: #2980b9;
+}
+
