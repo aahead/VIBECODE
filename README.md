@@ -1,6 +1,6 @@
 # VIBECODE
-Whack-a-Mole Game
-Game Overview
+# Whack-a-Mole Game
+Game Overview:
 Whack-a-Mole is a fun and fast-paced game where you click on moles that pop up from holes. The goal is to score as many points as possible by hitting the moles before time runs out. There are two game modes to choose from:
 
 15-Second Mode: The game lasts for 15 seconds.
